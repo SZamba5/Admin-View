@@ -1,38 +1,109 @@
+/* App.css */
+
+/* General styling for the app */
 .App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  color: #333;
+}
+
+/* Admin banner styling */
+.admin-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background: linear-gradient(90deg, #2d499d, #feb47b);
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: left; /* Align text to the left */
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Space out elements */
+  align-items: center; /* Vertically center items */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+}
+
+/* Styling for the buttons inside the banner */
+.banner-buttons {
+  display: flex;
+  gap: 15px; /* Spacing between the buttons */
+}
+
+.banner-btn {
+  background-color: #fff;
+  color: #333;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.banner-btn:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+/* Camera feed styling */
+.camera-feed {
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 250px;
+  border: 2px solid #000;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  margin-top: 10px;
+}
+
+/* Data table styling */
+.data-table {
+  width: 100%;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 8px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+table tr:hover {
+  background-color: #f1f1f1;
 }
 
-.App-link {
-  color: #61dafb;
+/* Example App.css or Profile.css */
+.profile-details {
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.profile-details p {
+  font-size: 16px;
+  margin: 5px 0;
 }

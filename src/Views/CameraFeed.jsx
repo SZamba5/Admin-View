@@ -1,46 +1,18 @@
-// src/CameraFeed.js
+//Live Camera Feed, before it was live feed from users webcam.
 
-import React, { useRef, useEffect, useState } from 'react';
+import React from 'react';
 
 const CameraFeed = () => {
-  const videoRef = useRef(null);
-  const [isCameraOn, setIsCameraOn] = useState(false);
-
-  useEffect(() => {
-    const startCamera = async () => {
-      try {
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
-        if (videoRef.current) {
-          videoRef.current.srcObject = stream;
-        }
-        setIsCameraOn(true);
-      } catch (err) {
-        console.error('Error accessing the camera', err);
-        setIsCameraOn(false);
-      }
-    };
-
-    startCamera();
-
-    return () => {
-      if (videoRef.current && videoRef.current.srcObject) {
-        const tracks = videoRef.current.srcObject.getTracks();
-        tracks.forEach(track => track.stop());
-      }
-    };
-  }, []);
-
   return (
     <div>
-      {isCameraOn ? (
-        <video
-          ref={videoRef}
-          autoPlay
-          className="camera-feed"  // Add this className
-        />
-      ) : (
-        <p>Camera is off or not accessible</p>
-      )}
+      <iframe
+        src="https://www.cameraftp.com/cameraftp/publish/camera.aspx/parentID91431007/shareID13185814/modelive/nameParking/camTypeCamera"
+        title="Live Camera Feed"
+        width="100%"
+        height="500px"
+        allow="50%"
+        frameBorder="0"
+      />
     </div>
   );
 };
